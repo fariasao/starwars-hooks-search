@@ -12,9 +12,23 @@ function Table() {
 
   const [planetsList, setPlanetsList] = useState([]);
 
+  const [valuesName, setValuesName] = useState([
+    'population',
+    'orbital_period',
+    'diameter',
+    'rotation_period',
+    'surface_water',
+  ]);
+
   // useEffect do DidMount
   useEffect(() => {
     getPlanets();
+    setValuesName([
+      'population',
+      'orbital_period',
+      'diameter',
+      'rotation_period',
+      'surface_water']);
   }, [getPlanets]);
 
   // useEffect para DidUpdate
@@ -35,6 +49,8 @@ function Table() {
       setPlanetsList(planetsList
         .filter((planet) => (Number(planet[filterType]) === Number(filterValue))));
     }
+    // retira colunas que jaa tenham aparecido em filtros anteriores
+    setValuesName(valuesName.filter((valueName) => (valueName !== filterType)));
   }
 
   return (
@@ -57,11 +73,9 @@ function Table() {
           data-testid="column-filter"
           onChange={ (event) => setFilterType(event.target.value) }
         >
-          <option value="population">population</option>
-          <option value="orbital_period">orbital_period</option>
-          <option value="diameter">diameter</option>
-          <option value="rotation_period">rotation_period</option>
-          <option value="surface_water">surface_water</option>
+          {valuesName.map((typeName) => (
+            <option value={ typeName } key={ typeName }>{typeName}</option>
+          ))}
         </select>
 
         {/* segundo filtro de comparacao */}
