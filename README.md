@@ -40,7 +40,7 @@ Front-end:
 ## Instalando Dependências
 > Frontend
 ```bash
-cd Filtro_de_Planetas/
+cd starwars-hooks-search/
 npm install
 ``` 
 ## Executando aplicação
