@@ -38,15 +38,18 @@ Front-end:
 > Desenvolvido usando: React, CSS3, HTML5, ES6, Context API, React Hooks
 
 ## Instalando Dependências
-> Frontend
-```bash
-cd starwars-hooks-search/
-npm install
-``` 
-## Executando aplicação
+Etapa 1 - Clonar o repositório na sua máquina
 
-* Para rodar o front-end:
-  ```
-    cd starwars-hooks-search/
+    git clone git@github.com:fariasao/starwars-hooks-search.git
+
+Etapa 2 - Entrar na pasta do projeto clonado
+
+    cd starwars-hooks-search
+
+Etapa 3 - Instalar dependências necessárias
+
+    npm install
+A partir daqui você já estará com tudo pronto na sua máquina local, para abrir o projeto no navegador, use o comando:
+
     npm start
-  ```
+
